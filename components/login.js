@@ -1,19 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,TextInput,TouchableOpacity,Image,ScrollView,FlatList} from 'react-native';
 
-import LoginImages from './components/loginImages';
-import Credentials from './components/credentials';
-import Separator from './components/separator';
-import HomePage from './components/homepage';
-import Login from './components/login';
+import LoginImages from './loginImages';
+import Credentials from './credentials';
+import Separator from './separator';
+// import HomePage from './components/homepage';
 
 
-export default function App() {
+export default function Login() {
   return (
     <View style={styles.container}>
 
-      <HomePage/>
-      {/* <Login/> */}
+      {/* <HomePage/> */}
+      <Text style={styles.heading}>Jobizz</Text>
+     
+      
+      <View style={styles.welcomeMessage}>
+      <Text style={styles.welcome}>
+        Welcome Back
+      </Text>
+      <Text style={styles.apply}>Let's log in. Apply to jobs!
+      </Text>
+      </View>
+
+      <Credentials/>
+
+      <Separator/>
+
+      <LoginImages/>
+      <Text style={styles.bottom}>Don't have an account?<Text style={{color:'blue'}}>Register</Text></Text>
+      
+     
     </View>
   );
 }

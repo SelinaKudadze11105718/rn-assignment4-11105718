@@ -16,11 +16,15 @@ const styles= StyleSheet.create({
     container:{
         flexDirection:'row',
         gap:160,
+        marginTop:64,
+        width:254,
+        height:55,
+        marginLeft:24,
 
     },
 
     columnHead:{
-        marginTop:15,
+        // marginTop:64,
         flexDirection: 'column',
         
     },

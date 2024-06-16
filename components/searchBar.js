@@ -4,7 +4,11 @@ import { StyleSheet, Text, View,TextInput,TouchableOpacity,Image } from 'react-n
 export default function SearchBar(){
     return(
         <View style={styles.container}>
-            <TextInput placeholder='Search a job or position'/>
+            <View style={styles.ImageText}>
+                <Image source={require('../assets/search.png')}/>
+                <TextInput placeholder='Search a job or position'/>
+            </View>
+            <Image source={require('../assets/filter.png')}/>
 
         </View>
     )
@@ -13,7 +17,16 @@ export default function SearchBar(){
 const styles= StyleSheet.create(
     {
         container:{
+            flexDirection: 'row',
+            gap:60,
+            marginTop:30,
+            marginLeft:27,
 
+        },
+
+        ImageText:{
+            flexDirection: 'row',
+            gap:20,
         }
 
     }
