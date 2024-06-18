@@ -21,7 +21,7 @@ export default function PopularJobs(props){
             </View>
 
             <View style={styles.wageCity}>
-                <Text style={{fontSize:14,color:'#0D0D26'}}>{props.wage}</Text>
+                <Text style={{fontSize:14,color:'#0D0D26',textAlign:'right'}}>{props.wage}</Text>
                 <Text  style={{fontSize:14,color:'#0D0D26'}}>{props.city}</Text>
                 
             </View>
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     wageCity:{
         flexDirection:'column',
         gap:10,
+        position:'absolute' ,left:260, top:20,
     },
 
     logoRole:{

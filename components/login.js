@@ -1,12 +1,22 @@
 import { StyleSheet, Text, View,TextInput,TouchableOpacity,Image,ScrollView,FlatList} from 'react-native';
+import {useState} from 'react';
+// import {NavigationContainer} from '@react-navigation/native';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+
+
+
+import HomePage from './homepage';
 import LoginImages from './loginImages';
 import Credentials from './credentials';
 import Separator from './separator';
+import LoginButton from './loginButton';
 // import HomePage from './components/homepage';
 
 
-export default function Login() {
+export default function Login({ navigation}) {
+  const [name,setName]=useState('');
+  const [email,setEmail]=useState('');
   return (
     <View style={styles.container}>
 
@@ -15,14 +25,24 @@ export default function Login() {
      
       
       <View style={styles.welcomeMessage}>
-      <Text style={styles.welcome}>
-        Welcome Back
-      </Text>
+        <View style={styles.hand}>
+
+        <Text style={styles.welcome}>
+          Welcome Back
+        </Text>
+
+        <Image style={{height:20,width:20,marginRight:100}} source={require('../assets/wavingHand.png')}/>
+      </View>
       <Text style={styles.apply}>Let's log in. Apply to jobs!
       </Text>
       </View>
 
-      <Credentials/>
+      <Credentials name={name} email={email} setName={setName} setEmail={setEmail} navigation={navigation}/>
+      
+      
+
+     
+            
 
       <Separator/>
 
@@ -45,7 +65,7 @@ const styles = StyleSheet.create({
   heading:{
     width:150,
     height:33,
-    marginTop:106,
+    marginTop:100,
     marginLeft:-160,
    
     fontFamily: 'Poppins',
@@ -63,6 +83,11 @@ const styles = StyleSheet.create({
     marginLeft:-110,
     flexDirection: 'column',
   },
+  hand:{
+    flexDirection: 'row',
+    
+
+  },
 
   welcome:{
     width:207,
@@ -72,6 +97,7 @@ const styles = StyleSheet.create({
     fontSize:24,
     fontWeight: 'bold',
     fontFamily: 'Poppins',
+    gap:0,
   },
 
   apply:{
@@ -79,7 +105,7 @@ const styles = StyleSheet.create({
     height:22,
     marginTop:10,
     // marginLeft:24,
-    color:'#0D0D26',
+    color:'#AFB0B6'
 
   },
 
@@ -89,12 +115,13 @@ const styles = StyleSheet.create({
     marginTop:64,
     marginLeft:12,
     textAlign:'center',
-    color:'#0D0D26',
+    color:'#AFB0B6'
 
   },
 
   border:{
     borderWidth:1,
     borderColor:'orange',
-  }
+  },
+
 });

@@ -1,15 +1,27 @@
 import { StyleSheet, Text, View,TextInput,TouchableOpacity,Image } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import LoginButton from './loginButton';
 
 
-export default function Credentials(){
+export default function Credentials({navigation,name,email,setName,setEmail}){
     return(
         <View style={styles.container}>
-            <TextInput style={styles.name} placeholder='Name' />
-            <TextInput style={styles.email} placeholder='Email' />
+            
+            <TextInput style={styles.name} placeholder='Name' onChangeText={(text)=>setName(text)}  value={name}/>
+            <TextInput style={styles.email} placeholder='Email' onChangeText={(text)=>setEmail(text)}  value={email} />
 
-            <TouchableOpacity style={styles.login}>
-                <Text style={styles.loginText}>Login</Text>
-                </TouchableOpacity>
+
+            <LoginButton navigation={navigation} name={name} email={email}/>
+
+           
+
+           
+
+            
+
+           
            
         </View>
     )
@@ -25,29 +37,8 @@ const styles= StyleSheet.create(
         border:1,
      }   
     ,
-        login:{
-            backgroundColor: '#356899',
-            width:327,
-            height:56,
-            marginTop:30,
-            marginLeft:24,
-            border:1,
-            paddingTop:16,
-            paddingBottom:16,
-            paddingRight:48,
-            paddingLeft:48,
-            border:1,
-            borderRadius:8,
-            gap:10,
-        },
-        loginText:{
-            width:47,
-            height:24,
-            fontFamily:'Poppins',
-            fontSize:16,
-            textAlign: 'right',
-            color:'#FFFFFF',
-        },
+        
+       
 
         name:{
             width:327,
@@ -70,6 +61,8 @@ const styles= StyleSheet.create(
             backgroundColor:'#AFB0B6',
 
         },
+
+        
 
     }
 )

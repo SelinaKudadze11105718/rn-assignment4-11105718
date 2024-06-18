@@ -1,4 +1,11 @@
 import { StyleSheet, Text, View,TextInput,TouchableOpacity,Image,ScrollView,FlatList,SectionList} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {useRoute} from '@react-navigation/native';
+
+
+
+
 import HomePageTop from './homepageTop';
 import SearchBar from './searchBar';
 import PopularJobs from './popularJobs';
@@ -6,10 +13,19 @@ import FeaturedJobs from './featuredJobs';
 
 
 export default function HomePage(){
+    const route =useRoute()
+    Name=route.params.name
+    Email=route.params.email
+
+
+    
     return(
         <ScrollView style={styles.container}>
-            <HomePageTop/>
+           
+            <HomePageTop name={Name} email={Email}/>
             <SearchBar/>
+            
+            
 
          
                 <SectionList horizontal={true}  sections={
@@ -33,10 +49,10 @@ export default function HomePage(){
             
 
             <View style={styles.popularJobs}>
-                    <PopularJobs role={'Jr Executive'} company={'Burger King'} city={'Los Angeles,US'} wage={'$96,000'} image={require('../assets/burgerKing.png')}  />
-                    <PopularJobs role={'Product Manager'} company={'Beats'} city={'Florida,US'} wage={'$84,000'} image={require('../assets/beats.png')}  /> 
-                    <PopularJobs role={'Product Manager'} company={'Facebook'} city={'Florida,US'} wage={'$86,000'} image={require('../assets/facebook.png')}  />
-                    <PopularJobs role={'Jr Executive'} company={'Burger King'} city={'Los Angeles'} wage={'$96,000'} image={require('../assets/burgerKing.png')}  /> 
+                    <PopularJobs role={'Jr Executive'} company={'Burger King'} city={'Los Angeles,US'} wage={'$96,000/y'} image={require('../assets/burgerKing.png')}  />
+                    <PopularJobs role={'Product Manager'} company={'Beats'} city={'Florida,US'} wage={'$84,000/y'} image={require('../assets/beats.png')}  /> 
+                    <PopularJobs role={'Product Manager'} company={'Facebook'} city={'Florida,US'} wage={'$86,000/y'} image={require('../assets/facebook.png')}  />
+                    <PopularJobs role={'Jr Executive'} company={'Burger King'} city={'Los Angeles'} wage={'$96,000/y'} image={require('../assets/burgerKing.png')}  /> 
                 </View>   
          
         </ScrollView>
@@ -46,6 +62,7 @@ export default function HomePage(){
 const styles=StyleSheet.create({
     container:{
         marginTop:100,
+        backgroundColor:'#FAFAFD',
         
     },
     featuredJobs:{

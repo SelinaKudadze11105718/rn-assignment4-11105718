@@ -1,11 +1,13 @@
 import { StyleSheet, Text, View,TextInput,TouchableOpacity,Image } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-export default function HomePageTop(){
+export default function HomePageTop({name,email}){
     return(
         <View style={styles.container}>
             <View style={styles.columnHead}>
-            <Text style={styles.name}>Eric Atsu</Text>
-            <Text style={styles.email}>eric@gmail.com</Text>
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.email}>{email}</Text>
             </View>
             <Image source={require('../assets/profile.png')}/>
         </View>
@@ -16,7 +18,7 @@ const styles= StyleSheet.create({
     container:{
         flexDirection:'row',
         gap:160,
-        marginTop:64,
+        marginTop:0,
         width:254,
         height:55,
         marginLeft:24,

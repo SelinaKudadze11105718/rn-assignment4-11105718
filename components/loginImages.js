@@ -13,7 +13,7 @@ export default function LoginImages(){
 const styles= StyleSheet.create({
     container:{
         flexDirection:'row',
-        marginTop:100,
+        marginTop:80,
         gap:50,
 
     }
