@@ -8,7 +8,7 @@ export default function SearchBar(){
                 <Image source={require('../assets/search.png')}/>
                 <TextInput placeholder='Search a job or position'/>
             </View>
-            <Image source={require('../assets/filter.png')}/>
+            <Image style={{position:'absolute', left:295}} source={require('../assets/filter.png')}/>
 
         </View>
     )

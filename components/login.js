@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,TextInput,TouchableOpacity,Image,ScrollView,FlatList} from 'react-native';
+import { StyleSheet, Text, View,TextInput,TouchableOpacity,Image,ScrollView,FlatList, SafeAreaView} from 'react-native';
 import {useState} from 'react';
 // import {NavigationContainer} from '@react-navigation/native';
 // import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -18,6 +18,8 @@ export default function Login({ navigation}) {
   const [name,setName]=useState('');
   const [email,setEmail]=useState('');
   return (
+<SafeAreaView>
+    <View style={{marginTop:0,marginBottom:0}}>
     <View style={styles.container}>
 
       {/* <HomePage/> */}
@@ -31,7 +33,7 @@ export default function Login({ navigation}) {
           Welcome Back
         </Text>
 
-        <Image style={{height:20,width:20,marginRight:100}} source={require('../assets/wavingHand.png')}/>
+        <Image style={{height:20,width:20,marginRight:100,position:'absolute',left:170,marginTop:5}} source={require('../assets/wavingHand.png')}/>
       </View>
       <Text style={styles.apply}>Let's log in. Apply to jobs!
       </Text>
@@ -51,6 +53,8 @@ export default function Login({ navigation}) {
       
      
     </View>
+    </View>
+    </SafeAreaView>
   );
 }
 
@@ -60,6 +64,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom:-50,
+    
+    
   },
 
   heading:{

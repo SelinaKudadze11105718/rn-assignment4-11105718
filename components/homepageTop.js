@@ -9,7 +9,7 @@ export default function HomePageTop({name,email}){
             <Text style={styles.name}>{name}</Text>
             <Text style={styles.email}>{email}</Text>
             </View>
-            <Image source={require('../assets/profile.png')}/>
+            <Image style={{position:'absolute',left:280,height:50,width:50}} source={require('../assets/profile2.png')}/>
         </View>
     )
 }
